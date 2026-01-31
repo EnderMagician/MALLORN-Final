@@ -1,0 +1,7 @@
+dropped,kept,pair_correlation,dropped_target_corr,kept_target_corr
+gp_peak_value_u,gp_smoothed_max_u,1.0,0.0665594052982645,0.0665594052982645
+gp_peak_value_g,gp_smoothed_max_g,1.0,0.06159344920994302,0.06159344920994302
+gp_peak_value_r,gp_smoothed_max_r,1.0,0.04220313949411982,0.04220313949411982
+gp_peak_value_i,gp_smoothed_max_i,1.0,0.03713371395642111,0.03713371395642111
+gp_peak_value_z,gp_smoothed_max_z,1.0,0.04028488217547101,0.04028488217547101
+gp_peak_value_y,gp_smoothed_max_y,1.0,0.047870389750080705,0.047870389750080705

@@ -1,0 +1,570 @@
+{
+  "source_file": "d:\\MALLORN Private\\data\\processed\\further_train_features.parquet",
+  "total_features": 346,
+  "total_categorized": 346,
+  "n_groups": 36,
+  "feature_groups": {
+    "identifiers": {
+      "description": "Object identifiers and target variable",
+      "count": 2,
+      "features": [
+        "object_id",
+        "target"
+      ]
+    },
+    "gp_kernel_hyperparameters": {
+      "description": "GP kernel hyperparameters and model quality metrics (Group 1)",
+      "count": 6,
+      "features": [
+        "gp_log_likelihood",
+        "gp_noise_level",
+        "gp_time_scale",
+        "gp_time_scale_normalized",
+        "gp_wavelength_scale",
+        "gp_wavelength_scale_normalized"
+      ]
+    },
+    "gp_residual_statistics": {
+      "description": "GP residual statistics - how well the model fits (Group 2)",
+      "count": 9,
+      "features": [
+        "gp_mae",
+        "gp_max_deviation",
+        "gp_mse",
+        "gp_normalized_residual_std",
+        "gp_residual_kurtosis",
+        "gp_residual_mean",
+        "gp_residual_median",
+        "gp_residual_skew",
+        "gp_residual_std"
+      ]
+    },
+    "gp_per_band_smoothed": {
+      "description": "GP smoothed predictions per band - mean, max, min, range, std (Group 4)",
+      "count": 30,
+      "features": [
+        "gp_smoothed_max_g",
+        "gp_smoothed_max_i",
+        "gp_smoothed_max_r",
+        "gp_smoothed_max_u",
+        "gp_smoothed_max_y",
+        "gp_smoothed_max_z",
+        "gp_smoothed_mean_g",
+        "gp_smoothed_mean_i",
+        "gp_smoothed_mean_r",
+        "gp_smoothed_mean_u",
+        "gp_smoothed_mean_y",
+        "gp_smoothed_mean_z",
+        "gp_smoothed_min_g",
+        "gp_smoothed_min_i",
+        "gp_smoothed_min_r",
+        "gp_smoothed_min_u",
+        "gp_smoothed_min_y",
+        "gp_smoothed_min_z",
+        "gp_smoothed_range_g",
+        "gp_smoothed_range_i",
+        "gp_smoothed_range_r",
+        "gp_smoothed_range_u",
+        "gp_smoothed_range_y",
+        "gp_smoothed_range_z",
+        "gp_smoothed_std_g",
+        "gp_smoothed_std_i",
+        "gp_smoothed_std_r",
+        "gp_smoothed_std_u",
+        "gp_smoothed_std_y",
+        "gp_smoothed_std_z"
+      ]
+    },
+    "gp_per_band_uncertainty": {
+      "description": "GP uncertainty metrics per band (Group 4)",
+      "count": 18,
+      "features": [
+        "gp_uncertainty_max_g",
+        "gp_uncertainty_max_i",
+        "gp_uncertainty_max_r",
+        "gp_uncertainty_max_u",
+        "gp_uncertainty_max_y",
+        "gp_uncertainty_max_z",
+        "gp_uncertainty_mean_g",
+        "gp_uncertainty_mean_i",
+        "gp_uncertainty_mean_r",
+        "gp_uncertainty_mean_u",
+        "gp_uncertainty_mean_y",
+        "gp_uncertainty_mean_z",
+        "gp_uncertainty_std_g",
+        "gp_uncertainty_std_i",
+        "gp_uncertainty_std_r",
+        "gp_uncertainty_std_u",
+        "gp_uncertainty_std_y",
+        "gp_uncertainty_std_z"
+      ]
+    },
+    "gp_per_band_derivative": {
+      "description": "GP derivative features per band - variability characteristics (Group 4)",
+      "count": 24,
+      "features": [
+        "gp_deriv_max_g",
+        "gp_deriv_max_i",
+        "gp_deriv_max_r",
+        "gp_deriv_max_u",
+        "gp_deriv_max_y",
+        "gp_deriv_max_z",
+        "gp_deriv_mean_g",
+        "gp_deriv_mean_i",
+        "gp_deriv_mean_r",
+        "gp_deriv_mean_u",
+        "gp_deriv_mean_y",
+        "gp_deriv_mean_z",
+        "gp_deriv_min_g",
+        "gp_deriv_min_i",
+        "gp_deriv_min_r",
+        "gp_deriv_min_u",
+        "gp_deriv_min_y",
+        "gp_deriv_min_z",
+        "gp_deriv_std_g",
+        "gp_deriv_std_i",
+        "gp_deriv_std_r",
+        "gp_deriv_std_u",
+        "gp_deriv_std_y",
+        "gp_deriv_std_z"
+      ]
+    },
+    "gp_per_band_peak": {
+      "description": "GP peak timing and value per band (Group 4)",
+      "count": 12,
+      "features": [
+        "gp_peak_time_g",
+        "gp_peak_time_i",
+        "gp_peak_time_r",
+        "gp_peak_time_u",
+        "gp_peak_time_y",
+        "gp_peak_time_z",
+        "gp_peak_value_g",
+        "gp_peak_value_i",
+        "gp_peak_value_r",
+        "gp_peak_value_u",
+        "gp_peak_value_y",
+        "gp_peak_value_z"
+      ]
+    },
+    "gp_color_features": {
+      "description": "GP color features at different time points (early/mid/late) (Group 5)",
+      "count": 14,
+      "features": [
+        "gp_color_gr_early",
+        "gp_color_gr_evolution",
+        "gp_color_gr_late",
+        "gp_color_gr_mid",
+        "gp_color_iz_early",
+        "gp_color_iz_late",
+        "gp_color_iz_mid",
+        "gp_color_ri_early",
+        "gp_color_ri_late",
+        "gp_color_ri_mid",
+        "gp_color_ug_early",
+        "gp_color_ug_evolution",
+        "gp_color_ug_late",
+        "gp_color_ug_mid"
+      ]
+    },
+    "gp_cross_band_correlations": {
+      "description": "GP correlations between different band lightcurves (Group 6)",
+      "count": 15,
+      "features": [
+        "gp_corr_gi",
+        "gp_corr_gr",
+        "gp_corr_gy",
+        "gp_corr_gz",
+        "gp_corr_iy",
+        "gp_corr_iz",
+        "gp_corr_ri",
+        "gp_corr_ry",
+        "gp_corr_rz",
+        "gp_corr_ug",
+        "gp_corr_ui",
+        "gp_corr_ur",
+        "gp_corr_uy",
+        "gp_corr_uz",
+        "gp_corr_zy"
+      ]
+    },
+    "gp_temporal_overall": {
+      "description": "GP overall temporal features across all bands (Group 7)",
+      "count": 5,
+      "features": [
+        "gp_overall_mean",
+        "gp_overall_range",
+        "gp_overall_std",
+        "gp_overall_uncertainty_mean",
+        "gp_overall_uncertainty_std"
+      ]
+    },
+    "gp_rise_decline": {
+      "description": "GP rise/decline characteristics - important for TDE identification (Group 8)",
+      "count": 24,
+      "features": [
+        "gp_decline_duration_g",
+        "gp_decline_duration_i",
+        "gp_decline_duration_r",
+        "gp_decline_duration_u",
+        "gp_decline_duration_y",
+        "gp_decline_duration_z",
+        "gp_decline_rate_g",
+        "gp_decline_rate_i",
+        "gp_decline_rate_r",
+        "gp_decline_rate_u",
+        "gp_decline_rate_y",
+        "gp_decline_rate_z",
+        "gp_rise_duration_g",
+        "gp_rise_duration_i",
+        "gp_rise_duration_r",
+        "gp_rise_duration_u",
+        "gp_rise_duration_y",
+        "gp_rise_duration_z",
+        "gp_rise_rate_g",
+        "gp_rise_rate_i",
+        "gp_rise_rate_r",
+        "gp_rise_rate_u",
+        "gp_rise_rate_y",
+        "gp_rise_rate_z"
+      ]
+    },
+    "gp_asymmetry": {
+      "description": "GP asymmetry ratios - TDEs have asymmetric lightcurves (Group 8)",
+      "count": 7,
+      "features": [
+        "gp_asymmetry_ratio_g",
+        "gp_asymmetry_ratio_i",
+        "gp_asymmetry_ratio_r",
+        "gp_asymmetry_ratio_u",
+        "gp_asymmetry_ratio_y",
+        "gp_asymmetry_ratio_z",
+        "gp_mean_asymmetry_ratio"
+      ]
+    },
+    "gp_peak_timing": {
+      "description": "GP peak timing differences across bands (Group 8)",
+      "count": 4,
+      "features": [
+        "gp_peak_timing_diff_gi",
+        "gp_peak_timing_diff_rz",
+        "gp_peak_timing_diff_ur",
+        "gp_peak_timing_spread"
+      ]
+    },
+    "gp_spectral": {
+      "description": "GP spectral features - flux variation with wavelength (Group 9)",
+      "count": 2,
+      "features": [
+        "gp_spectral_curvature",
+        "gp_spectral_slope"
+      ]
+    },
+    "gp_model_quality_per_band": {
+      "description": "GP model quality metrics per band - MSE/MAE (Group 10)",
+      "count": 12,
+      "features": [
+        "gp_band_mae_g",
+        "gp_band_mae_i",
+        "gp_band_mae_r",
+        "gp_band_mae_u",
+        "gp_band_mae_y",
+        "gp_band_mae_z",
+        "gp_band_mse_g",
+        "gp_band_mse_i",
+        "gp_band_mse_r",
+        "gp_band_mse_u",
+        "gp_band_mse_y",
+        "gp_band_mse_z"
+      ]
+    },
+    "gp_variability": {
+      "description": "GP variability metrics - AGN vs TDE/SN discrimination (Group 11)",
+      "count": 1,
+      "features": [
+        "gp_excess_variance"
+      ]
+    },
+    "gp_structure_function": {
+      "description": "GP structure function at multiple timescales - AGN specific (Group 11)",
+      "count": 18,
+      "features": [
+        "gp_structure_function_lag10_g",
+        "gp_structure_function_lag10_i",
+        "gp_structure_function_lag10_r",
+        "gp_structure_function_lag10_u",
+        "gp_structure_function_lag10_y",
+        "gp_structure_function_lag10_z",
+        "gp_structure_function_lag1_g",
+        "gp_structure_function_lag1_i",
+        "gp_structure_function_lag1_r",
+        "gp_structure_function_lag1_u",
+        "gp_structure_function_lag1_y",
+        "gp_structure_function_lag1_z",
+        "gp_structure_function_lag5_g",
+        "gp_structure_function_lag5_i",
+        "gp_structure_function_lag5_r",
+        "gp_structure_function_lag5_u",
+        "gp_structure_function_lag5_y",
+        "gp_structure_function_lag5_z"
+      ]
+    },
+    "gp_curvature": {
+      "description": "GP second derivative (curvature) features (Group 12)",
+      "count": 18,
+      "features": [
+        "gp_curvature_max_g",
+        "gp_curvature_max_i",
+        "gp_curvature_max_r",
+        "gp_curvature_max_u",
+        "gp_curvature_max_y",
+        "gp_curvature_max_z",
+        "gp_curvature_mean_g",
+        "gp_curvature_mean_i",
+        "gp_curvature_mean_r",
+        "gp_curvature_mean_u",
+        "gp_curvature_mean_y",
+        "gp_curvature_mean_z",
+        "gp_curvature_std_g",
+        "gp_curvature_std_i",
+        "gp_curvature_std_r",
+        "gp_curvature_std_u",
+        "gp_curvature_std_y",
+        "gp_curvature_std_z"
+      ]
+    },
+    "gp_color_magnitude_correlation": {
+      "description": "GP color-magnitude correlations (Group 13)",
+      "count": 2,
+      "features": [
+        "gp_color_magnitude_corr_gr",
+        "gp_color_magnitude_corr_ug"
+      ]
+    },
+    "bazin_parameters": {
+      "description": "Bazin function fit parameters - supernova-like transient shape",
+      "count": 6,
+      "features": [
+        "bazin_A",
+        "bazin_B",
+        "bazin_fit_failed",
+        "bazin_t0",
+        "bazin_tau_fall",
+        "bazin_tau_rise"
+      ]
+    },
+    "flux_basic_statistics": {
+      "description": "Basic flux statistics per band (mean, max, min, std, skew)",
+      "count": 30,
+      "features": [
+        "Flux_max_g",
+        "Flux_max_i",
+        "Flux_max_r",
+        "Flux_max_u",
+        "Flux_max_y",
+        "Flux_max_z",
+        "Flux_mean_g",
+        "Flux_mean_i",
+        "Flux_mean_r",
+        "Flux_mean_u",
+        "Flux_mean_y",
+        "Flux_mean_z",
+        "Flux_min_g",
+        "Flux_min_i",
+        "Flux_min_r",
+        "Flux_min_u",
+        "Flux_min_y",
+        "Flux_min_z",
+        "Flux_skew_g",
+        "Flux_skew_i",
+        "Flux_skew_r",
+        "Flux_skew_u",
+        "Flux_skew_y",
+        "Flux_skew_z",
+        "Flux_std_g",
+        "Flux_std_i",
+        "Flux_std_r",
+        "Flux_std_u",
+        "Flux_std_y",
+        "Flux_std_z"
+      ]
+    },
+    "flux_error_statistics": {
+      "description": "Flux error statistics per band",
+      "count": 6,
+      "features": [
+        "Flux_err_mean_g",
+        "Flux_err_mean_i",
+        "Flux_err_mean_r",
+        "Flux_err_mean_u",
+        "Flux_err_mean_y",
+        "Flux_err_mean_z"
+      ]
+    },
+    "time_statistics": {
+      "description": "Time-based statistics per band (duration, count)",
+      "count": 12,
+      "features": [
+        "Time (MJD)_count_g",
+        "Time (MJD)_count_i",
+        "Time (MJD)_count_r",
+        "Time (MJD)_count_u",
+        "Time (MJD)_count_y",
+        "Time (MJD)_count_z",
+        "Time (MJD)_duration_g",
+        "Time (MJD)_duration_i",
+        "Time (MJD)_duration_r",
+        "Time (MJD)_duration_u",
+        "Time (MJD)_duration_y",
+        "Time (MJD)_duration_z"
+      ]
+    },
+    "von_neumann_ratio": {
+      "description": "Von Neumann ratio per band - measures variability smoothness",
+      "count": 6,
+      "features": [
+        "Flux_VonNeumann_g",
+        "Flux_VonNeumann_i",
+        "Flux_VonNeumann_r",
+        "Flux_VonNeumann_u",
+        "Flux_VonNeumann_y",
+        "Flux_VonNeumann_z"
+      ]
+    },
+    "redshift_scaled_flux": {
+      "description": "Redshift-scaled flux features",
+      "count": 12,
+      "features": [
+        "Flux_Max_Z_Scaled_g",
+        "Flux_Max_Z_Scaled_i",
+        "Flux_Max_Z_Scaled_r",
+        "Flux_Max_Z_Scaled_u",
+        "Flux_Max_Z_Scaled_y",
+        "Flux_Max_Z_Scaled_z",
+        "Flux_Z_Scaled_g",
+        "Flux_Z_Scaled_i",
+        "Flux_Z_Scaled_r",
+        "Flux_Z_Scaled_u",
+        "Flux_Z_Scaled_y",
+        "Flux_Z_Scaled_z"
+      ]
+    },
+    "flux_percentiles": {
+      "description": "Flux percentile features (p5, p25, p50, p75)",
+      "count": 12,
+      "features": [
+        "flux_p25_g",
+        "flux_p25_i",
+        "flux_p25_r",
+        "flux_p50_g",
+        "flux_p50_i",
+        "flux_p50_r",
+        "flux_p5_g",
+        "flux_p5_i",
+        "flux_p5_r",
+        "flux_p75_g",
+        "flux_p75_i",
+        "flux_p75_r"
+      ]
+    },
+    "flux_iqr": {
+      "description": "Flux interquartile range features",
+      "count": 3,
+      "features": [
+        "flux_iqr_g",
+        "flux_iqr_i",
+        "flux_iqr_r"
+      ]
+    },
+    "flux_ratio": {
+      "description": "Flux ratio features (peak/median)",
+      "count": 3,
+      "features": [
+        "flux_ratio_peak_median_g",
+        "flux_ratio_peak_median_i",
+        "flux_ratio_peak_median_r"
+      ]
+    },
+    "detected_duration": {
+      "description": "Detected duration features",
+      "count": 3,
+      "features": [
+        "detected_duration_g",
+        "detected_duration_i",
+        "detected_duration_r"
+      ]
+    },
+    "peak_color": {
+      "description": "Peak color features",
+      "count": 1,
+      "features": [
+        "peak_color_g_r"
+      ]
+    },
+    "snr_features": {
+      "description": "Signal-to-noise ratio features",
+      "count": 9,
+      "features": [
+        "snr_max_g",
+        "snr_max_i",
+        "snr_max_r",
+        "snr_mean_g",
+        "snr_mean_i",
+        "snr_mean_r",
+        "snr_std_g",
+        "snr_std_i",
+        "snr_std_r"
+      ]
+    },
+    "pca_features": {
+      "description": "PCA-derived features",
+      "count": 3,
+      "features": [
+        "pca_1",
+        "pca_2",
+        "pca_3"
+      ]
+    },
+    "amplitude_features": {
+      "description": "Amplitude-related features",
+      "count": 1,
+      "features": [
+        "amplitude_robust"
+      ]
+    },
+    "beyond_std": {
+      "description": "Features measuring data beyond standard deviation",
+      "count": 1,
+      "features": [
+        "beyond_1_std"
+      ]
+    },
+    "redshift": {
+      "description": "Redshift value",
+      "count": 1,
+      "features": [
+        "Z"
+      ]
+    },
+    "uncategorized": {
+      "description": "Features that don't fit other categories",
+      "count": 14,
+      "features": [
+        "detected_count_g",
+        "detected_count_i",
+        "detected_count_r",
+        "detected_max_snr_g",
+        "detected_max_snr_i",
+        "detected_max_snr_r",
+        "flux_p95_g",
+        "flux_p95_i",
+        "flux_p95_r",
+        "flux_range_robust_g",
+        "flux_range_robust_i",
+        "flux_range_robust_r",
+        "low_Z",
+        "stetson_k"
+      ]
+    }
+  }
+}

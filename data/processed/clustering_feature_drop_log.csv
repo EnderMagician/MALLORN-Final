@@ -1,0 +1,68 @@
+cluster_id,winner,winner_target_corr,dropped_count,dropped_features
+42,gp_uncertainty_mean_y,0.01788169696493089,6,"gp_uncertainty_mean_u, gp_overall_uncertainty_mean, gp_uncertainty_mean_z, gp_uncertainty_mean_g, gp_uncertainty_mean_i, gp_uncertainty_mean_r"
+41,gp_uncertainty_max_r,0.005065491244351759,5,"gp_uncertainty_max_i, gp_uncertainty_max_z, gp_uncertainty_max_g, gp_uncertainty_max_y, gp_uncertainty_max_u"
+152,gp_smoothed_mean_y,0.022392715425476706,3,"gp_smoothed_mean_z, gp_smoothed_mean_i, gp_overall_mean"
+91,gp_smoothed_max_y,0.047870389750080566,3,"gp_peak_value_y, gp_smoothed_max_z, gp_peak_value_z"
+6,gp_curvature_max_u,0.07575659033608663,3,"gp_curvature_std_u, gp_curvature_max_g, gp_curvature_std_g"
+14,gp_curvature_max_y,0.041803954660653994,3,"gp_curvature_std_y, gp_curvature_max_z, gp_curvature_std_z"
+39,gp_uncertainty_std_y,0.15045811900097325,3,"gp_uncertainty_std_z, gp_uncertainty_std_i, gp_uncertainty_std_r"
+15,gp_curvature_max_r,0.027292112706977147,3,"gp_curvature_max_i, gp_curvature_std_r, gp_curvature_std_i"
+195,gp_corr_ui,0.09092944050662392,2,"gp_corr_uz, gp_corr_uy"
+107,gp_asymmetry_ratio_z,0.0146947031656494,2,"gp_asymmetry_ratio_i, gp_asymmetry_ratio_r"
+38,gp_uncertainty_std_u,0.12903307106261863,2,"gp_uncertainty_std_g, gp_overall_uncertainty_std"
+150,snr_mean_r,0.014315713888028023,1,Flux_mean_r
+148,Flux_mean_i,0.01790458300519333,1,snr_mean_i
+156,Flux_mean_g,0.004303931363830411,1,snr_mean_g
+151,gp_smoothed_mean_g,0.017112559342787888,1,gp_smoothed_mean_u
+51,gp_smoothed_range_u,0.04086808491100908,1,gp_structure_function_lag5_u
+56,gp_smoothed_max_u,0.06655940529826433,1,gp_peak_value_u
+212,gp_residual_std,0.016933910781427215,1,gp_mse
+137,Time (MJD)_duration_i,0.02269470870240617,1,Time (MJD)_duration_r
+57,gp_smoothed_max_g,0.061593449209942815,1,gp_peak_value_g
+7,gp_deriv_min_u,0.09490159728084019,1,gp_deriv_min_g
+9,gp_deriv_std_u,0.07808212991626985,1,gp_deriv_std_g
+53,gp_smoothed_range_g,0.03316703874146453,1,gp_structure_function_lag5_g
+80,gp_smoothed_std_r,0.024640421288660997,1,gp_structure_function_lag10_r
+21,gp_deriv_std_r,0.03863323767608354,1,gp_deriv_std_i
+93,gp_smoothed_max_r,0.042203139494119774,1,gp_peak_value_r
+52,gp_structure_function_lag10_g,0.010238557085915343,1,gp_smoothed_std_g
+17,gp_deriv_min_r,0.03883448675324279,1,gp_deriv_min_i
+20,gp_deriv_max_r,0.06125502101566871,1,gp_deriv_max_i
+92,gp_smoothed_max_i,0.03713371395642106,1,gp_peak_value_i
+50,gp_structure_function_lag10_u,0.012896456861694348,1,gp_smoothed_std_u
+166,gp_deriv_mean_g,0.05104623578593074,1,gp_deriv_mean_u
+130,Flux_Max_Z_Scaled_z,0.019999344472622235,1,Flux_Max_Z_Scaled_i
+40,gp_time_scale,0.025562685530011606,1,gp_time_scale_normalized
+197,gp_wavelength_scale,0.06594427387159145,1,gp_wavelength_scale_normalized
+77,gp_smoothed_std_z,0.023309495474170775,1,gp_smoothed_std_y
+79,gp_smoothed_range_y,0.023646392722735228,1,gp_smoothed_range_z
+81,gp_smoothed_std_i,0.02657425993980226,1,gp_structure_function_lag10_i
+112,gp_smoothed_min_i,0.04498971367907023,1,gp_smoothed_min_z
+94,gp_peak_time_i,0.016886229218548612,1,gp_peak_time_r
+16,gp_deriv_min_y,0.05443190984468321,1,gp_deriv_min_z
+19,gp_deriv_max_y,0.07671552237638068,1,gp_deriv_max_z
+167,gp_deriv_mean_y,0.05645145300187848,1,gp_deriv_mean_z
+191,gp_corr_gz,0.0711542520874376,1,gp_corr_gi
+188,gp_corr_ry,0.05991352823892928,1,gp_corr_rz
+105,gp_decline_duration_r,0.04923086798682885,1,gp_decline_duration_i
+189,gp_corr_iy,0.05083591817812111,1,gp_corr_iz
+1,gp_decline_rate_z,0.009401988779706818,1,gp_decline_rate_i
+95,gp_peak_time_z,0.015883562267226235,1,gp_peak_time_y
+194,gp_corr_ur,0.08692241730045179,1,gp_corr_ug
+18,gp_deriv_std_y,0.05161123813620393,1,gp_deriv_std_z
+106,gp_decline_duration_z,0.043902261062699705,1,gp_decline_duration_y
+89,gp_rise_rate_y,0.016525103264349167,1,gp_rise_rate_z
+100,gp_rise_duration_y,0.04253473049019536,1,gp_rise_duration_z
+214,gp_band_mae_u,0.012383762375761153,1,gp_band_mse_u
+13,gp_structure_function_lag1_r,0.026303962129736312,1,gp_structure_function_lag1_i
+12,gp_structure_function_lag1_y,0.04506799433983136,1,gp_structure_function_lag1_z
+8,gp_structure_function_lag1_u,0.08211175500340642,1,gp_structure_function_lag1_g
+219,gp_band_mae_g,0.016518286978543587,1,gp_band_mse_g
+76,gp_structure_function_lag10_z,0.019341102610340593,1,gp_structure_function_lag10_y
+78,gp_structure_function_lag5_y,0.013786398845481055,1,gp_structure_function_lag5_z
+227,gp_curvature_mean_z,0.030540065664110685,1,gp_curvature_mean_y
+99,gp_rise_duration_r,0.04108095832224112,1,gp_rise_duration_i
+90,gp_rise_rate_r,0.009721565246184097,1,gp_rise_rate_i
+43,detected_max_snr_g,0.01519687052231011,1,snr_max_g
+71,snr_max_r,0.020372615765052844,1,detected_max_snr_r
+73,snr_max_i,0.012162379165499313,1,detected_max_snr_i

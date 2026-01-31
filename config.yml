@@ -1,0 +1,260 @@
+# MALLORN Challenge Configuration
+# Central configuration file for local reproducibility
+mode: local
+
+# Seeds
+seeds:
+  default: 15
+  data_processing_legacy: 42  # For data-process-mallorn.ipynb only
+
+# Paths (relative to project root)
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  models: models
+  submissions: submissions
+  features_selection: data/features_selection
+  tabpfn_weights: data\TabPFN_Weights\tabpfn-v2-classifier-finetuned-zk73skhh.cpkt
+
+# LSST Physics Constants
+lsst:
+  extinction_coefficients:
+    u: 4.81
+    g: 3.64
+    r: 2.70
+    i: 2.06
+    z: 1.58
+    y: 1.31
+  wavelengths:
+    u: 368.0
+    g: 480.0
+    r: 622.0
+    i: 754.0
+    z: 868.0
+    y: 973.0
+  bands: [u, g, r, i, z, y]
+
+# GP Hyperparameters
+gp:
+  length_scale: [50.0, 2000.0]
+  length_scale_bounds: [[1.0, 200.0], [100.0, 10000.0]]
+  noise_level: 1.0
+  noise_level_bounds: [1.0e-5, 1.0e5]
+
+# Cross-validation
+cv:
+  n_splits: 5
+  shuffle: true
+
+# Model settings
+models:
+  # List of all active models in the pipeline
+  names: [xgb, lgb, cat, mlp, resnet, et, ft_transformer, tabpfn]
+  
+  # --- XGBoost ---
+  xgb:
+    tune: true
+    optuna_trials: 150
+    common_params:
+      objective: "binary:logistic"
+      eval_metric: "aucpr"
+      n_estimators: 3000
+      early_stopping_rounds: 50
+      n_jobs: -1
+    tune_params:
+      learning_rate: [0.01, 0.15]
+      max_depth: [3, 9]
+      min_child_weight: [1, 10]
+      subsample: [0.6, 0.95]
+      colsample_bytree: [0.5, 0.95]
+      reg_lambda: [0.001, 10.0]
+      reg_alpha: [0.001, 10.0]
+      scale_pos_weight: [10, 40]
+    fixed_params:
+      'learning_rate': 0.09053589913843314
+      'max_depth': 5
+      'min_child_weight': 3
+      'subsample': 0.7783508005657956
+      'colsample_bytree': 0.7400459483922632
+      'reg_lambda': 0.4119066512238298
+      'reg_alpha': 0.0015349775763692395
+      'scale_pos_weight': 15.871460814534036
+      
+  # --- LightGBM ---
+  lgb:
+    tune: false
+    optuna_trials: 150
+    common_params:
+      objective: "binary"
+      metric: "average_precision"
+      n_estimators: 3000
+      n_jobs: -1
+      verbosity: -1
+    tune_params:
+      learning_rate: [0.01, 0.15]
+      num_leaves: [20, 100]
+      max_depth: [3, 12]
+      min_child_samples: [10, 100]
+      subsample: [0.6, 0.95]
+      colsample_bytree: [0.5, 0.95]
+      reg_alpha: [0.001, 10.0]
+      reg_lambda: [0.001, 10.0]
+      scale_pos_weight: [10, 40]
+    fixed_params:
+      learning_rate: 0.09599145211806509
+      num_leaves: 59
+      max_depth: 9
+      min_child_samples: 78
+      subsample: 0.6221231872487066
+      colsample_bytree: 0.8637723635958693
+      reg_alpha: 0.018863417999689203
+      reg_lambda: 0.02345729586906597
+      scale_pos_weight: 38.17731911383301
+    
+  # --- CatBoost ---
+  cat:
+    tune: false
+    optuna_trials: 100
+    common_params:
+      iterations: 3000
+      eval_metric: "PRAUC"
+      early_stopping_rounds: 150
+      verbose: 0
+      allow_writing_files: false
+    tune_params:
+      learning_rate: [0.01, 0.15]
+      depth: [3, 6]
+      l2_leaf_reg: [0.001, 10.0]
+      random_strength: [0.001, 10.0]
+      scale_pos_weight: [10, 40]
+    fixed_params:
+      'learning_rate': 0.05892678356432071
+      'depth': 5
+      'l2_leaf_reg': 2.9577581873239467
+      'random_strength': 0.9788105055435304
+      'scale_pos_weight': 16.08584872254545
+
+  # --- ExtraTrees ---
+  et:
+    tune: false
+    optuna_trials: 150
+    common_params:
+      bootstrap: true
+      n_jobs: -1
+    tune_params:
+      n_estimators: [1000, 2500]
+      max_depth: [3, 8]
+      min_samples_split: [10, 50]
+      min_samples_leaf: [5, 20]
+      max_features: [0.1, 0.3]
+      class_weight: ["balanced"]
+    fixed_params:
+      'n_estimators': 523
+      'max_depth': 28
+      'min_samples_split': 9
+      'min_samples_leaf': 3 
+      'max_features': 0.7
+      'class_weight': 'balanced'
+
+  # --- FT-Transformer ---
+  ft_transformer:
+    tune: false
+    optuna_trials: 50
+    common_params:
+      ffn_d_hidden_multiplier: 2.0
+      n_heads: 8
+      max_epochs_tuning: 50
+      max_epochs_final: 100
+      patience: 15
+      batch_size: 128
+    tune_params:
+      n_layers: [1, 6]
+      d_token: [64, 512]
+      dropout: [0.0, 0.5]
+      lr: [0.00001, 0.001]
+    fixed_params:
+
+
+  # --- ResNet ---
+  resnet:
+    tune: false
+    optuna_trials: 50
+    common_params:
+      n_epochs_tuning: 30
+      n_epochs_final: 70
+      n_bags: 5
+      batch_size: 128
+      alpha: 0.25
+    tune_params:
+      hidden_dim: [128, 256, 512]
+      n_blocks: [1, 3]
+      dropout: [0.2, 0.5]
+      lr: [0.0001, 0.005]
+      weight_decay: [0.00001, 0.01]
+      gamma: [1.0, 3.0]
+    fixed_params:
+      'hidden_dim': 512
+      'n_blocks': 1
+      'dropout': 0.2384365001674738
+      'lr': 0.0013559567345204837
+      'weight_decay': 0.000528314200531795 
+      'gamma': 2.305072991780455
+
+  # --- Multi-Layer Perceptron ---
+  mlp:
+    tune: false
+    optuna_trials: 50
+    common_params:
+      n_epochs_tuning: 30
+      n_epochs_final: 70
+      n_bags: 5
+      batch_size: 128
+      alpha: 0.25
+    tune_params:
+      hidden1: [256, 512, 768]
+      hidden2: [128, 256, 512]
+      hidden3: [64, 128, 256]
+      dropout1: [0.2, 0.6]
+      dropout2: [0.2, 0.5]
+      dropout3: [0.1, 0.4]
+      lr: [0.0001, 0.005]
+      weight_decay: [0.00001, 0.01]
+      gamma: [1.0, 3.0]
+    fixed_params:
+      'hidden1': 256
+      'hidden2': 512
+      'hidden3': 256
+      'dropout1': 0.3404395429068724
+      'dropout2': 0.4313108340017805
+      'dropout3': 0.33753985041084245
+      'lr': 0.0005677140110060885
+      'weight_decay': 6.404495189372789e-05
+      'gamma': 1.0478088441090332
+
+  # --- TabPFN ---
+  tabpfn:
+
+# Meta columns (to exclude from features)
+meta_columns:
+  - object_id
+  - target
+  - fold
+  - kfold
+  - is_synthetic
+  - split
+  - SpecType
+
+# LSST Settings for feature engineering
+pca:
+  time_grid_start: -50
+  time_grid_end: 100
+  time_grid_points: 75
+  n_components: 3
+
+# Physics constants
+physics:
+  z_limit_tde: 1.9
+
+# Ensemble settings
+ensemble:
+  include_models: [xgb, lgb, cat, tabpfn]

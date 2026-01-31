@@ -1,0 +1,5 @@
+MALLORN Astronomical Classification Challenge Submission Copyright [2026] Nguyen Minh Hieu
+
+This product includes the TabPFN2 model developed by Prior Labs (http://priorlabs.ai/tabpfn-license).
+
+This project is "Built with PriorLabs-TabPFN".

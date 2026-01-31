@@ -1,0 +1,8 @@
+full:
+    - hill: 0.7173
+    - ensemble: 0.6793
+no resnet, mlp, et:
+    - hill: 0.7103
+    - ensemble: 0.6866
+no ft, et:
+    - hill: 0.7182
