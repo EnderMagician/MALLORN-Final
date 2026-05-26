@@ -1,4 +1,5 @@
 # 🌌 MALLORN Astronomical Classification Challenge
+**Final Placement: Top 9**
 
 **Built with PriorLabs-TabPFN**
 
